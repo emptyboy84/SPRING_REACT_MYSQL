@@ -1,0 +1,10 @@
+signIn
+signUp
+weeklyList
+currentList
+popularWordlist
+searchList
+relativeWordlist
+boarderDetail
+favoriteList
+commentList
