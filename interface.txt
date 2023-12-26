@@ -1,10 +1,205 @@
-signIn
-signUp
-weeklyList
-currentList
-popularWordlist
-searchList
-relativeWordlist
-boarderDetail
-favoriteList
+/*function*/
+
+<signIn>
+
+-request
+{
+    *emailAddress:string,
+    *password:string
+}
+
+-response
+success 
+http status:200(ok)
+{
+code:"SU",
+message:string,
+token:"jwt...",
+expireDate:number
+}
+
+-login_fail
+http status:401(unathorized)
+
+{
+    code:"SF",
+    message:"Sign failed"
+}
+DB_error
+http status-500(Internal Server Error)
+{
+    code:"DE",
+    message:"DatabaseError"
+
+}
+
+<signUp>
+-request
+{
+    *email:string,
+    *pass:string,
+    *nickname:string,
+    *telnumber:string,
+    addressDetail:string
+
+}
+
+-response
+success
+http status:200(ok)
+{
+code:"SU",
+messege:string
+}
+
+fail
+-email format unconsistency,less than8 character
+
+-email duplicaiton
+http status-400(unathorized)
+{
+code:"Sf",
+message:"Exsited"
+}
+
+DB_error
+http status-500(Internal Server Error)
+{
+    code:"DE",
+    message:"DatabaseError"
+
+}
+
+<weeklyList>
+response
+-success
+http status:200(ok)
+{
+code:"SU",
+message:"success",
+currentList:boadListItem[]
+}
+boardListItem{
+    title:string,
+    content:string,
+    boardTitleImage:string,
+    favoriteList:int,
+    commentCount:int,
+    viewCount:int,
+    writeDatetime:string,
+    writerProfileImage:string,
+    writerNickname:string:string,
+    boardNumber:int,
+}
+
+-fail
+DB_error
+http status-500(Internal Server Error)
+{
+    code:"DE",
+    message:"DatabaseError"
+
+}
+
+<currentList>
+success
+http status:200(ok)
+{
+code:"SU",
+message:"success",
+searchtList:boadListItem[]
+}
+boardListItem{
+    title:string,
+    content:string,
+    boardTitleImage:string,
+    favoriteList:int,
+    commentCount:int,
+    viewCount:int,
+    writeDatetime:string,
+    writerProfileImage:string,
+    writerNickname:string:string,
+    boardNumber:int,
+}
+
+fail
+DB_error
+http status-500(Internal Server Error)
+{
+    code:"DE",
+    message:"DatabaseError"
+
+}
+
+<popularWordlist>
+-response
+success
+http status:200(ok)
+{
+code:"SU",
+message:"success",
+popularWordlist:string[]
+}
+
+fail
+DB_error
+http status-500(Internal Server Error)
+{
+    code:"DE",
+    message:"DatabaseError"
+
+}
+
+
+<searchList>
+-response
+success
+http status:200(ok)
+{
+code:"SU",
+message:"success",
+searchList:string[]
+}
+
+fail
+DB_error
+http status-500(Internal Server Error)
+{
+    code:"DE",
+    message:"DatabaseError"
+
+}
+
+
+<relativeWordlist>
+-response
+success
+http status:200(ok)
+{
+code:"SU",
+message:"success",
+searchRelativeWordlist:string[]
+}
+
+fail
+DB_error
+http status-500(Internal Server Error)
+{
+    code:"DE",
+    message:"DatabaseError"
+
+}
+
+<boarderDetail>
+<favoriteList>
 commentList
+postComment
+boardDelete
+boardWrite
+boardUpdate
+getUser
+userBoardList(특정게시물)
+fileUpload
+getFile
+
+
