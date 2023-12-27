@@ -191,14 +191,280 @@ http status-500(Internal Server Error)
 }
 
 <boarderDetail>
+success
+http status-200(ok)
+{
+    code:"SU",
+    message:"success",
+    boardNumber:int,
+    title:string,
+    content:string,
+    boardImage:string[],
+    writeDatetime:string,
+    writeDatetime:string,
+    writerNickname:string,
+    writerNickname:string,
+    writerProfileImage:string,
+}
+
+
+
+fail
+no Exsited post
+http status-400(Bad request)
+{
+    code:"NB",
+    message:"NO Exsited number"
+
+
+}
+
 <favoriteList>
-commentList
-postComment
-boardDelete
-boardWrite
-boardUpdate
-getUser
+-response
+success
+http status-200(ok)
+{
+    code:"SU",
+    message:"Success",
+    commentList:string[]
+}
+
+FavoriteList{
+  email:string,
+  nickname:string,
+  ProfileImage:string  
+}
+
+fail
+-DB_error
+http status - 500(Internal Server Error)
+{
+    code:"DE",
+    message:"DatabaseError"
+}
+
+putFavorite(likeFunction)
+-request
+{
+    boardNumber:int
+}
+
+-response
+success
+Http status-200
+{
+    code:"SU",
+    message:"Success"
+}
+
+fail
+-Required information not entered
+-email format incorrect
+-pw less than8 character
+-phone number incorrect
+
+
+
+
+<commentList>
+success
+Http status-200
+{
+    code:"SU",
+    message:"Success"
+}
+fail
+-DB_error
+http status - 500(Internal Server Error)
+{
+    code:"DE",
+    message:"DatabaseError"
+    commentList:commentListItem[]
+}
+
+commentListItem{
+    email:string,
+    nickname:string,
+    writeDatetime:string,
+    content:string
+}
+
+<postComment>
+-request
+{
+    *content:string
+}
+-response
+
+fail
+
+-noExsited post
+Http status-400(Bad request)
+{
+    code:"NB",
+    message:"noExsitedBoard"
+}
+-noExsitedUser
+Http status-400(Bad request)
+{
+    code:"NU",
+    message"noExsitedUser"
+}
+
+
+<boardDelete>
+fail
+
+-noExsited post
+Http status-400(Bad request)
+{
+    code:"NB",
+    message:"noExsitedBoard"
+}
+-noExsitedUser
+Http status-400(Bad request)
+{
+    code:"NU",
+    message"noExsitedUser"
+}
+-permission none
+Http status-403(forbidden)
+{
+    code:"NP",
+    message:"DatabaseError"
+}
+
+<boardWrite>
+-request
+{
+    *title:string,
+    *content:string,
+    boardImageList:string[]
+}
+
+-response
+success
+
+
+kHttp status-200(ok)
+{
+    code:"SU",
+    message:"success"
+}
+
+<boardUpdate>
+-request
+{
+    *title:string,
+    *content:string,
+    boardImageList:string[]
+}
+-response
+-DatabaseError
+Http status-500(InternalServerError)
+{
+    code:"DE",
+    message:"DatabaseError"
+}
+
+<getUser>
+-response
+success
+Http status 200
+{
+    code:"SU",
+    message:"success",
+    email:string,
+    nickname:string,
+    ProfileImage:string
+}
+fail
+-noExsitedUser
+Http status-400(Bad request)
+{
+    code:"NB",
+    message:"noExsitedBoard"
+}
+-noExsitedUser
+Http status-400(Bad request)
+{
+    code:"NU",
+    message"noExsitedUser"
+}
+-permission none
+Http status-403(forbidden)
+{
+    code:"NP",
+    message:"DatabaseError"
+}
+
+Http status-500(InternalServerError)
+{
+    code:"DE",
+    message:"DatabaseError"
+}
+
+
+
+
 userBoardList(특정게시물)
+
+
+-response
+Success
+Http status 200
+{
+    code:"SU",
+    message:"success",
+    boardList:BoadListItem[]
+}
+BoadListItem
+{
+    boardNumber:int,
+    title:string,
+    content:string,
+    favoriteCount:int,
+    boardTitleImage:string,
+    commentCount:int,
+    viewCount:int,
+    writeDatetime:string,
+    writerNickname:string,
+    writerProfileImage:string
+}
+<patchNickname>
+-request
+{
+    nickname:string
+}
+-response
+
+fail-DatabaseError
+Http status-500(InternalServerError)
+{
+    code:"DE",
+    message:"DatabaseError"
+}
+patchProfileImage
+-request
+{
+    *ProfileImage:stringcon
+}
+
+-response
+success
+Http status -200
+{
+    code:"SU",
+    message:"success"
+}
+fail
+-noExsitedUser
+
+Http status-400(BadRequest)
+{
+    nickname:string
+}
+
 fileUpload
 getFile
 
