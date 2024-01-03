@@ -11,8 +11,8 @@ public interface ResponseCode {
     String DUPLCATE_EMAIL="DE";
     String DUPLCATE_NICKNAME="DN";
     String DUPLCATE_TEL_NUMBER="DT";
-    String NOT_EXSITED-USER="NU";
-    String NOT_EXSITED-BOARD="NB";
+    String NOT_EXSITED_USER="NU";
+    String NOT_EXSITED_BOARD="NB";
     //http status401
     String SIGN_IN_FAIL="SF";
     String AUTHROZATION_FAIL="AF";

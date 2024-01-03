@@ -4,6 +4,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.mysql.cj.x.protobuf.MysqlxDatatypes.Scalar.String;
+import com.stinnovation.boardback.common.ResponseCode;
+import com.stinnovation.boardback.common.ResponseMessage;
+
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
