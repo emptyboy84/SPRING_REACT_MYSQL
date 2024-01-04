@@ -1,16 +1,13 @@
-import React from "react";
-import './style.css';
-//  import { url } from "inspector";
-import { BoardListItem } from "types/interface";
-import { useNavigate } from "react-router-dom";
 import defaultProfileImage from "asset/image/default-profile-image.png";
-
+import { useNavigate } from "react-router-dom";
+import { BoardListItem } from "types/interface";
+import './style.css';
 
 interface Props {
     boardListItem:BoardListItem;
 }
 //component
-export default function BoardListItem({boardListItem}:Props){
+export default function BoardItem({boardListItem}:Props){
     
     const {boardNumber,title,content,boardTitleImage}=boardListItem;
     const{favoriteCount,commentCount,viewCount}=boardListItem;
@@ -36,8 +33,8 @@ export default function BoardListItem({boardListItem}:Props){
                     <div className="board-list-item-write-box">
                         <div className="board-list-item-nickname">{writerNickname}</div>    
                         <div className="board-list-item-write-date">{writeDateTime}</div>   
-                    </div>                   
-                </div>  
+                    </div>
+                </div>
                 <div className="board-list-item-middle">
                     <div className="board-list-item-title">{title}</div>
                     <div className="board-list-item-content">{content}</div>
@@ -58,4 +55,6 @@ export default function BoardListItem({boardListItem}:Props){
     )
     }
     
+    
+
     

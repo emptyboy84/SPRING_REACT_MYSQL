@@ -1,6 +1,6 @@
 import { BoardListItem } from "types/interface";
 
-const latestBoardlistMock:BoardListItem[]=[
+const LatestBoardlistMock:BoardListItem[]=[
     {
         
             "boardNumber":1,
