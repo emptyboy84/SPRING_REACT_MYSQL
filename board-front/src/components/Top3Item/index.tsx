@@ -16,7 +16,14 @@ export default function Top3Item({top3ListItem}:Props){
     const {favoriteCount,commentCount,viewCount}=top3ListItem;
     const{writeDateTime,writerNickname, writerProfileImage}=top3ListItem;
 
-    //rendering
+    //function:  navigate 함수
+    //const navigator=use navigate();
+    //event handler:게시물아이템 클릭 이벤트 처리함수
+
+    //rendering top3ListItem
+    const onClickHandler=()=>{
+        //navigator(boardNumber);
+    }
     return(
          <div className='top-3-list-item' style={{backgroundImage:`url(${boardTitleImage})`}}>
             <div className='top-3-list-item-main-box'>
@@ -39,7 +46,7 @@ export default function Top3Item({top3ListItem}:Props){
                     {`댓글0 좋아요${favoriteCount} 조회수${viewCount}`}
                     </div>
 
-                    
+
                 </div>
 
             </div>
