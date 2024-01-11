@@ -1,18 +1,14 @@
 .favorite-list-item-box {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.favorite-list-item-top {
-    display: flex;
     align-items: center;
     gap: 8px;
 }
 
+
 .favorite-list-item-profile-box {
-    width: 32px;
-    height: 32px;
+    
+    width: 50px;
+    height: 50px;
 }
 
 .favorite-list-item-profile-image {
@@ -32,7 +28,7 @@
     line-height: 140%;
 }
 
-.-favoritelist-item-divider {
+/* .-favoritelist-item-divider {
     color: rgba(0, 0, 0, 0.4);
 
     font-size: 16px;
@@ -54,4 +50,4 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 150%;
-}
+} */

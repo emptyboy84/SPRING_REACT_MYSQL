@@ -1,6 +1,6 @@
 import defaultProfileImage from "assets/image/default-profile-image.jpg";
 import { FavoriteListItem } from "types/interface";
-//import './style.css';
+import './style.css';
 interface Props{
     favoriteListItem:FavoriteListItem;
 }
